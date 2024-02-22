@@ -14,6 +14,11 @@
 		F89D61132915891A002F738A /* MustTootOnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89D61122915891A002F738A /* MustTootOnTests.swift */; };
 		F89D611D2915891A002F738A /* MustTootOnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89D611C2915891A002F738A /* MustTootOnUITests.swift */; };
 		F89D611F2915891A002F738A /* MustTootOnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89D611E2915891A002F738A /* MustTootOnUITestsLaunchTests.swift */; };
+		F8BA5A9E2916BB1200649AC1 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA5A9D2916BB1200649AC1 /* Instance.swift */; };
+		F8BA5AA12916BB8D00649AC1 /* EasyNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = F8BA5AA02916BB8D00649AC1 /* EasyNetwork */; };
+		F8BA5AA32916CA7500649AC1 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA5AA22916CA7500649AC1 /* ContentViewModel.swift */; };
+		F8BA5AA62917CDBC00649AC1 /* MastodonServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA5AA52917CDBC00649AC1 /* MastodonServers.swift */; };
+		F8EC8268291CE5F900C64BE3 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = F8EC8267291CE5F900C64BE3 /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,10 @@
 		F89D61182915891A002F738A /* MustTootOnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MustTootOnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89D611C2915891A002F738A /* MustTootOnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustTootOnUITests.swift; sourceTree = "<group>"; };
 		F89D611E2915891A002F738A /* MustTootOnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustTootOnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F89D612E29158C00002F738A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F8BA5A9D2916BB1200649AC1 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
+		F8BA5AA22916CA7500649AC1 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F8BA5AA52917CDBC00649AC1 /* MastodonServers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonServers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8BA5AA12916BB8D00649AC1 /* EasyNetwork in Frameworks */,
+				F8EC8268291CE5F900C64BE3 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +106,15 @@
 		F89D60FF29158918002F738A /* MustTootOn */ = {
 			isa = PBXGroup;
 			children = (
+				F8BA5AA42917CD9B00649AC1 /* Endpoints */,
+				F89D612E29158C00002F738A /* Info.plist */,
 				F89D610029158918002F738A /* MustTootOnApp.swift */,
 				F89D610229158918002F738A /* ContentView.swift */,
+				F8BA5AA22916CA7500649AC1 /* ContentViewModel.swift */,
 				F89D61042915891A002F738A /* Assets.xcassets */,
 				F89D61062915891A002F738A /* MustTootOn.entitlements */,
 				F89D61072915891A002F738A /* Preview Content */,
+				F8BA5A9D2916BB1200649AC1 /* Instance.swift */,
 			);
 			path = MustTootOn;
 			sourceTree = "<group>";
@@ -129,6 +144,14 @@
 			path = MustTootOnUITests;
 			sourceTree = "<group>";
 		};
+		F8BA5AA42917CD9B00649AC1 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F8BA5AA52917CDBC00649AC1 /* MastodonServers.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +168,10 @@
 			dependencies = (
 			);
 			name = MustTootOn;
+			packageProductDependencies = (
+				F8BA5AA02916BB8D00649AC1 /* EasyNetwork */,
+				F8EC8267291CE5F900C64BE3 /* NukeUI */,
+			);
 			productName = MustTootOn;
 			productReference = F89D60FD29158918002F738A /* MustTootOn.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +244,10 @@
 				Base,
 			);
 			mainGroup = F89D60F429158917002F738A;
+			packageReferences = (
+				F8BA5A9F2916BB8D00649AC1 /* XCRemoteSwiftPackageReference "easynetwork" */,
+				F8EC8266291CE5F900C64BE3 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = F89D60FE29158918002F738A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8BA5AA32916CA7500649AC1 /* ContentViewModel.swift in Sources */,
 				F89D610329158918002F738A /* ContentView.swift in Sources */,
+				F8BA5A9E2916BB1200649AC1 /* Instance.swift in Sources */,
+				F8BA5AA62917CDBC00649AC1 /* MastodonServers.swift in Sources */,
 				F89D610129158918002F738A /* MustTootOnApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +453,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MustTootOn/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -437,7 +472,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.willybreitenbach.MustTootOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,6 +494,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MustTootOn/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -475,7 +513,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.willybreitenbach.MustTootOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,6 +652,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8BA5A9F2916BB8D00649AC1 /* XCRemoteSwiftPackageReference "easynetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/we7ee/easynetwork";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+		F8EC8266291CE5F900C64BE3 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8BA5AA02916BB8D00649AC1 /* EasyNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8BA5A9F2916BB8D00649AC1 /* XCRemoteSwiftPackageReference "easynetwork" */;
+			productName = EasyNetwork;
+		};
+		F8EC8267291CE5F900C64BE3 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8EC8266291CE5F900C64BE3 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F89D60F529158918002F738A /* Project object */;
 }

@@ -6,16 +6,40 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct ContentView: View {
+    @StateObject
+    private var viewModel: ViewModel = ViewModel()    
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+            List(viewModel.instances) { instance in
+                Button {
+                    viewModel.start(domain: instance.domain)
+                } label: {
+                    HStack {
+                        LazyImage(url: URL(string: instance.proxiedThumbnail))
+                            .frame(width: 50, height: 50)
+                            .mask(RoundedRectangle(cornerRadius: 5, style: .continuous))
+
+                        VStack(alignment: .leading) {
+                            Text(instance.domain)
+                                .font(.headline)
+                            Text("Users: \(instance.totalUsers)")
+                                .font(.subheadline)
+                        }
+
+                        Spacer()
+                    }
+                    .foregroundStyle(.foreground)
+                }
+            }
         }
-        .padding()
+        .task {
+            try? await viewModel.fetchServers()
+        }
     }
 }
 
